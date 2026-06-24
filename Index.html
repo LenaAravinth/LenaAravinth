@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lena Aravinth B — Product Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0C0C0E;
+  --bg2:#111113;
+  --bg3:#18181C;
+  --bg4:#1E1E24;
+  --bg5:#252530;
+  --border:rgba(255,255,255,0.07);
+  --border2:rgba(255,255,255,0.12);
+  --text:#FFFFFF;
+  --text2:rgba(255,255,255,0.55);
+  --text3:rgba(255,255,255,0.3);
+  --accent:#C084FC;
+  --accent2:#A855F7;
+  --accent3:#7C3AED;
+  --glow:rgba(168,85,247,0.18);
+  --glow2:rgba(168,85,247,0.08);
+  --red:#E85252;
+  --red-glow:rgba(232,82,82,0.2);
+  --green:#4ADE80;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;border-bottom:1px solid transparent;transition:all 0.3s}
+nav.scrolled{background:rgba(12,12,14,0.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--border)}
+.nav-logo{font-size:15px;font-weight:600;letter-spacing:-0.3px;color:var(--text);text-decoration:none}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:13px;font-weight:400;color:var(--text2);text-decoration:none;transition:color 0.2s;letter-spacing:0.2px}
+.nav-links a:hover{color:var(--text)}
+.nav-pill{background:rgba(255,255,255,0.08);border:1px solid var(--border2);color:var(--text);padding:7px 18px;border-radius:20px;font-size:13px;font-weight:500;text-decoration:none;transition:all 0.2s}
+.nav-pill:hover{background:rgba(255,255,255,0.14)}
+
+/* ── LOGO TICKER ── */
+.ticker{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;overflow:hidden;position:relative}
+.ticker::before,.ticker::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.ticker::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent)}
+.ticker::after{right:0;background:linear-gradient(-90deg,var(--bg2),transparent)}
+.ticker-track{display:flex;gap:48px;width:max-content;animation:ticker 22s linear infinite}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{font-size:13px;font-weight:500;color:var(--text3);white-space:nowrap;letter-spacing:0.5px;display:flex;align-items:center;gap:8px}
+.ticker-item span{color:var(--text2)}
+
+/* ── HERO ── */
+#home{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 48px 80px;text-align:center;position:relative;overflow:hidden}
+.hero-orb{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.14) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.hero-orb2{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(200,100,255,0.08) 0%,transparent 65%);top:20%;right:15%;pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid var(--border2);border-radius:20px;padding:6px 16px;font-size:12px;color:var(--text2);margin-bottom:28px;letter-spacing:0.3px}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero-title{font-size:clamp(44px,6.5vw,88px);font-weight:700;line-height:1.05;letter-spacing:-2.5px;margin-bottom:22px}
+.hero-title .line2{color:var(--text2);font-weight:300;font-style:italic;letter-spacing:-1.5px}
+.hero-sub{font-size:16px;color:var(--text2);max-width:480px;line-height:1.7;margin-bottom:36px;font-weight:300}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-dark{background:var(--text);color:var(--bg);padding:12px 26px;border-radius:22px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;letter-spacing:-0.2px}
+.btn-dark:hover{background:rgba(255,255,255,0.88);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text);padding:12px 26px;border-radius:22px;font-size:14px;font-weight:400;text-decoration:none;border:1px solid var(--border2);transition:all 0.2s}
+.btn-outline:hover{background:rgba(255,255,255,0.06)}
+.hero-stats{display:flex;gap:0;margin-top:64px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--bg2)}
+.hstat{padding:22px 36px;text-align:center;border-right:1px solid var(--border)}
+.hstat:last-child{border-right:none}
+.hstat-num{font-size:28px;font-weight:700;letter-spacing:-1px;color:var(--text)}
+.hstat-label{font-size:11px;color:var(--text3);margin-top:4px;letter-spacing:0.4px;text-transform:uppercase}
+
+/* ── SHARED SECTION ── */
+section{padding:100px 48px}
+.inner{max-width:1040px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.sec-title{font-size:clamp(28px,4vw,46px);font-weight:700;letter-spacing:-1.5px;line-height:1.1;margin-bottom:12px}
+.sec-sub{font-size:15px;color:var(--text2);max-width:480px;line-height:1.7;font-weight:300}
+
+/* ── SPLIT SECTIONS (like video) ── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:72px 48px}
+.split.reverse{direction:rtl}
+.split.reverse>*{direction:ltr}
+.split-text h2{font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-1px;line-height:1.2;margin-bottom:12px}
+.split-text p{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:20px}
+.split-text .learn-more{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--text);background:rgba(255,255,255,0.08);border:1px solid var(--border2);padding:9px 18px;border-radius:20px;text-decoration:none;transition:all 0.2s}
+.split-text .learn-more:hover{background:rgba(255,255,255,0.14)}
+.split-img{border-radius:16px;overflow:visible;background:transparent;border:none;display:flex;align-items:flex-start;justify-content:center;position:relative}
+.split-img-content{width:100%;display:flex;flex-direction:column;gap:12px;padding:0}
+.mock-card{background:var(--bg4);border:1px solid var(--border2);border-radius:12px;padding:18px 20px}
+.mock-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.mock-val{font-size:18px;font-weight:700;color:var(--text)}
+.mock-bar{height:3px;background:var(--border);border-radius:2px;margin-top:8px;overflow:hidden}
+.mock-fill{height:100%;border-radius:2px}
+.mock-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--bg3);border-radius:6px;border:1px solid var(--border);font-size:12px}
+.mock-row-label{color:var(--text3)}
+.mock-row-val{font-weight:500}
+.stat-chip{display:inline-flex;align-items:center;gap:6px;background:rgba(74,222,128,0.15);border:1px solid rgba(74,222,128,0.35);border-radius:20px;padding:6px 14px;font-size:13px;font-weight:500;color:var(--green)}
+.step-list{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.step-row{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:var(--bg4);border:1px solid var(--border);border-radius:8px}
+.step-icon{width:28px;height:28px;border-radius:50%;background:rgba(168,85,247,0.15);border:1px solid rgba(168,85,247,0.3);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;color:var(--accent)}
+.step-info{flex:1}
+.step-name{font-size:13px;font-weight:500;color:var(--text)}
+.step-desc{font-size:11px;color:var(--text3);margin-top:2px}
+
+/* ── FEATURE GRID (video-style dark cards) ── */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:16px;overflow:hidden;margin-top:48px}
+.feat-card{background:var(--bg2);padding:32px;transition:background 0.2s;position:relative;overflow:hidden}
+.feat-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,var(--glow2),transparent 60%);opacity:0;transition:opacity 0.3s}
+.feat-card:hover{background:var(--bg3)}
+.feat-card:hover::after{opacity:1}
+.feat-icon{width:44px;height:44px;border-radius:10px;background:rgba(168,85,247,0.12);border:1px solid rgba(168,85,247,0.2);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:18px}
+.feat-title{font-size:17px;font-weight:600;letter-spacing:-0.3px;margin-bottom:8px}
+.feat-desc{font-size:13px;color:var(--text2);line-height:1.7}
+
+/* ── CASE STUDIES ── */
+#work{background:var(--bg)}
+.cs-wrapper{display:flex;flex-direction:column;gap:1px;background:var(--border);border-radius:20px;overflow:hidden;margin-top:48px}
+.cs-row{background:var(--bg2);padding:32px 36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;transition:background 0.2s;cursor:pointer;text-decoration:none;color:inherit}
+.cs-row:hover{background:var(--bg3)}
+.cs-row.featured{background:linear-gradient(135deg,rgba(124,58,237,0.12),var(--bg2));border:1px solid rgba(168,85,247,0.2);border-radius:0}
+.cs-tag{font-size:11px;color:var(--accent);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:8px}
+.cs-title{font-size:20px;font-weight:700;letter-spacing:-0.5px;margin-bottom:6px}
+.cs-desc{font-size:13px;color:var(--text2);line-height:1.7;max-width:560px}
+.cs-nums{display:flex;gap:24px;margin-top:16px;flex-wrap:wrap}
+.cs-num{text-align:left}
+.cs-num-val{font-size:22px;font-weight:700;letter-spacing:-0.5px;color:var(--text)}
+.cs-num-label{font-size:11px;color:var(--text3);margin-top:2px;text-transform:uppercase;letter-spacing:0.3px}
+.cs-arrow{font-size:20px;color:var(--text3);transition:all 0.2s;margin-top:4px}
+.cs-row:hover .cs-arrow{color:var(--text);transform:translate(2px,-2px)}
+
+/* ── PERSONAL ── */
+#personal{background:var(--bg2)}
+.personal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:20px;overflow:hidden;margin-top:48px}
+.personal-card{background:var(--bg3);padding:28px;transition:background 0.2s}
+.personal-card:hover{background:var(--bg4)}
+.personal-emoji{font-size:32px;margin-bottom:14px}
+.personal-title{font-size:15px;font-weight:600;margin-bottom:8px;letter-spacing:-0.2px}
+.personal-text{font-size:13px;color:var(--text2);line-height:1.7}
+.personal-tag{display:inline-block;background:rgba(255,255,255,0.06);border:1px solid var(--border2);border-radius:4px;padding:3px 8px;font-size:11px;color:var(--text3);margin:4px 4px 0 0}
+
+/* ── FAQ ── */
+#faq{background:var(--bg)}
+.faq-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;margin-top:48px}
+.faq-logo-box{background:var(--bg3);border:1px solid var(--border);border-radius:20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.faq-logo-inner{width:80px;height:80px;background:var(--bg4);border:1px solid var(--border2);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;color:var(--text)}
+.faq-glow{position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,0.2),transparent 70%)}
+.faq-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;cursor:pointer;transition:background 0.15s;font-size:14px;font-weight:500;gap:16px}
+.faq-q:hover{background:rgba(255,255,255,0.03)}
+.faq-plus{color:var(--text3);font-size:18px;font-weight:300;flex-shrink:0;transition:transform 0.2s}
+.faq-plus.open{transform:rotate(45deg);color:var(--text)}
+.faq-a{display:none;padding:0 22px 18px;font-size:13px;color:var(--text2);line-height:1.75}
+.faq-a.open{display:block}
+.faq-cta{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--bg3);border:1px solid var(--border);border-radius:12px;margin-top:20px;flex-wrap:wrap;gap:12px}
+.faq-cta-text{font-size:13px;color:var(--text2)}
+.faq-cta-btn{background:var(--text);color:var(--bg);padding:9px 20px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+.faq-cta-btn:hover{background:rgba(255,255,255,0.88)}
+
+/* ── CTA FOOTER ── */
+#cta{background:var(--bg);padding:80px 48px;text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--border)}
+.cta-glow{position:absolute;width:600px;height:300px;border-radius:50%;background:radial-gradient(ellipse,rgba(124,58,237,0.1),transparent 70%);bottom:-100px;left:50%;transform:translateX(-50%);pointer-events:none}
+.cta-title{font-size:clamp(32px,5vw,60px);font-weight:700;letter-spacing:-2px;line-height:1.1;margin-bottom:14px;position:relative}
+.cta-sub{font-size:15px;color:var(--text2);margin-bottom:32px}
+.floating-cards{display:flex;justify-content:center;gap:24px;margin-top:48px;flex-wrap:wrap}
+.f-card{width:220px;height:130px;border-radius:16px;background:linear-gradient(135deg,var(--bg4),var(--bg3));border:1px solid var(--border2);padding:18px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-3deg);transition:transform 0.3s}
+.f-card:nth-child(2){transform:rotate(0deg);background:linear-gradient(135deg,var(--bg5),var(--bg4))}
+.f-card:nth-child(3){transform:rotate(3deg)}
+.f-card:hover{transform:rotate(0deg) translateY(-6px)}
+.f-card-name{font-size:12px;color:var(--text3);letter-spacing:1px;text-transform:uppercase}
+.f-card-role{font-size:15px;font-weight:600;margin-top:4px}
+.f-card-tag{font-size:11px;color:var(--accent);background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.2);padding:3px 8px;border-radius:4px;align-self:flex-start}
+
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-left{font-size:13px;color:var(--text3)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:13px;color:var(--text3);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--text2)}
+
+/* ── CONTACT MODAL PANEL ── */
+.contact-panel{position:fixed;right:-440px;top:0;bottom:0;width:420px;background:var(--bg2);border-left:1px solid var(--border2);z-index:500;transition:right 0.35s cubic-bezier(0.4,0,0.2,1);padding:40px 32px;overflow-y:auto}
+.contact-panel.open{right:0}
+.panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:499;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.panel-overlay.open{opacity:1;pointer-events:all}
+.panel-close{position:absolute;top:20px;right:20px;background:rgba(255,255,255,0.08);border:1px solid var(--border2);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text2);font-size:16px;transition:all 0.2s}
+.panel-close:hover{background:rgba(255,255,255,0.14);color:var(--text)}
+.panel-title{font-size:22px;font-weight:700;letter-spacing:-0.5px;margin-bottom:6px}
+.panel-sub{font-size:13px;color:var(--text2);margin-bottom:28px;line-height:1.6}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.form-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px}
+.form-input{background:var(--bg4);border:1px solid var(--border);border-radius:8px;padding:11px 14px;font-size:14px;color:var(--text);font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;width:100%}
+.form-input:focus{border-color:rgba(168,85,247,0.5)}
+.form-input::placeholder{color:var(--text3)}
+textarea.form-input{resize:vertical;min-height:100px}
+.form-submit{background:var(--text);color:var(--bg);border:none;padding:12px 24px;border-radius:22px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s;width:100%;margin-top:6px}
+.form-submit:hover{background:rgba(255,255,255,0.88);transform:translateY(-1px)}
+.contact-links-row{display:flex;flex-direction:column;gap:10px;margin-top:24px;padding-top:24px;border-top:1px solid var(--border)}
+.cl-link{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;text-decoration:none;transition:border-color 0.2s}
+.cl-link:hover{border-color:var(--border2)}
+.cl-icon{width:32px;height:32px;border-radius:6px;background:rgba(168,85,247,0.1);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.cl-val{font-size:13px;color:var(--text)}
+.cl-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px}
+
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  #home,section,.split{padding:80px 20px}
+  .split,.faq-wrap,.about-grid{grid-template-columns:1fr}
+  .split.reverse{direction:ltr}
+  .feat-grid,.personal-grid,.cs-nums{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column;border:none;gap:0}
+  .hstat{border-right:none;border-bottom:1px solid var(--border)}
+  .floating-cards{display:none}
+  footer{padding:20px}
+  .contact-panel{width:100%;right:-100%}
+}
+
+/* ── PERSONAL TABS ── */
+.ptab{background:var(--bg4);border:1px solid var(--border);border-radius:20px;padding:8px 18px;font-size:13px;font-weight:400;color:var(--text2);cursor:pointer;font-family:'Inter',sans-serif;transition:all 0.2s}
+.ptab:hover{color:var(--text);border-color:var(--border2)}
+.ptab.active{background:var(--text);color:var(--bg);border-color:var(--text);font-weight:500}
+.ptab-panel{animation:fadeIn 0.2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── TRIP PHOTOS ── */
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.photo-add-card{border:2px dashed var(--border2);border-radius:12px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;background:var(--bg4);transition:all 0.2s;text-align:center;min-height:160px}
+.photo-add-card:hover{border-color:var(--accent);background:rgba(168,85,247,0.05)}
+.trip-photo{border-radius:12px;overflow:hidden;aspect-ratio:4/3;position:relative;background:var(--bg4)}
+.trip-photo img{width:100%;height:100%;object-fit:cover}
+.trip-photo .del-btn{position:absolute;top:6px;right:6px;background:rgba(0,0,0,0.65);border:none;border-radius:50%;width:26px;height:26px;color:white;cursor:pointer;font-size:12px;display:none}
+.trip-photo:hover .del-btn{display:flex;align-items:center;justify-content:center}
+
+/* ── ENTRIES (learnings/poems) ── */
+.entries-list{display:flex;flex-direction:column;gap:10px}
+.entry-card{background:var(--bg4);border:1px solid var(--border);border-radius:12px;padding:20px 22px}
+.entry-meta{font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px}
+.entry-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px;letter-spacing:-0.2px}
+.entry-body{font-size:13px;color:var(--text2);line-height:1.7}
+.poem-style .entry-title{font-style:italic;font-size:17px;line-height:1.7;font-weight:400}
+.entry-input{background:var(--bg4);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--text);font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;flex:1;min-width:120px}
+.entry-input:focus{border-color:rgba(168,85,247,0.5)}
+.entry-input::placeholder{color:var(--text3)}
+.entry-btn{background:var(--accent);color:white;border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;transition:opacity 0.2s}
+.entry-btn:hover{opacity:0.85}
+
+/* ── READS ── */
+.reads-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-bottom:8px}
+.read-card{background:var(--bg4);border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.read-cover{width:100%;aspect-ratio:3/4;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:4px}
+.read-title{font-size:13px;font-weight:600;color:var(--text);line-height:1.3}
+.read-author{font-size:11px;color:var(--text3)}
+.read-tag{font-size:10px;padding:3px 8px;border-radius:10px;align-self:flex-start;font-weight:500}
+.read-tag.reading{background:rgba(168,85,247,0.15);color:var(--accent)}
+.read-tag.done{background:rgba(74,222,128,0.12);color:var(--green)}
+.read-tag.want{background:rgba(255,255,255,0.06);color:var(--text3)}
+
+/* ── FORM LABEL for sections ── */
+.form-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.8px}
+
+@media(max-width:768px){
+  #home > div:first-of-type{grid-template-columns:1fr !important}
+  #about > div{grid-template-columns:1fr !important}
+  #photoZone{display:none !important}
+  .photo-grid{grid-template-columns:repeat(2,1fr)}
+  .reads-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- CONTACT PANEL -->
+<div class="panel-overlay" id="overlay" onclick="closeContact()"></div>
+<div class="contact-panel" id="contactPanel">
+  <button class="panel-close" onclick="closeContact()">✕</button>
+  <div class="panel-title">Let's connect</div>
+  <p class="panel-sub">Currently a Senior Product Manager at Apollo Health Co. Drop me a message and I'll get back within 24 hours.</p>
+  <div class="form-group">
+    <label class="form-label">Your name</label>
+    <input type="text" class="form-input" placeholder="Priya Sharma"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Email</label>
+    <input type="email" class="form-input" placeholder="priya@company.com"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Company / Role</label>
+    <input type="text" class="form-input" placeholder="Flipkart · PM Hiring"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Message</label>
+    <textarea class="form-input" placeholder="Hi Lena, we're looking for a PM for…"></textarea>
+  </div>
+  <button class="form-submit" onclick="alert('Form will work once connected to Formspree!')">Send message →</button>
+  <div class="contact-links-row">
+    <a href="mailto:Lenaaravinth@gmail.com" class="cl-link">
+      <div class="cl-icon">✉</div>
+      <div><div class="cl-lbl">Email</div><div class="cl-val">Lenaaravinth@gmail.com</div></div>
+    </a>
+    <a href="https://linkedin.com/in/lenaaravinthb" target="_blank" class="cl-link">
+      <div class="cl-icon">in</div>
+      <div><div class="cl-lbl">LinkedIn</div><div class="cl-val">linkedin.com/in/lenaaravinthb</div></div>
+    </a>
+    <a href="tel:+917731944523" class="cl-link">
+      <div class="cl-icon">☎</div>
+      <div><div class="cl-lbl">Phone</div><div class="cl-val">+91 77319 44523</div></div>
+    </a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">Lena Aravinth</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#teardowns">Teardowns</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#personal">Personal</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#" class="nav-pill" onclick="openContact();return false;">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section id="home" style="padding-top:60px;text-align:left">
+  <div class="hero-orb"></div><div class="hero-orb2"></div>
+  <div style="max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1fr 240px;gap:56px;align-items:center">
+    <div>
+      <div class="hero-badge" style="margin-bottom:28px"><div class="hero-badge-dot"></div>Senior Product Manager · Apollo Health Co · Hyderabad</div>
+      <h1 class="hero-title" style="text-align:left">Product Manager.<br><span class="line2">Supply chain soul.</span></h1>
+      <p class="hero-sub" style="text-align:left">4+ years shipping real products in logistics, pharma retail, and automation. ISB-certified. Currently Senior PM at Apollo Health Co.</p>
+      <div class="hero-btns" style="justify-content:flex-start">
+        <a href="#work" class="btn-dark">See my work</a>
+        <a href="#" class="btn-outline" onclick="openContact();return false;">Let's talk</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <div id="photoZone" style="width:220px;height:260px;border-radius:20px;border:2px dashed var(--border2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;background:var(--bg3);transition:all 0.2s;overflow:hidden;position:relative" onclick="document.getElementById('photoInput').click()">
+        <img id="heroPhoto" src="" style="display:none;width:100%;height:100%;object-fit:cover"/>
+        <div id="photoPlaceholder" style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px;text-align:center">
+          <div style="width:52px;height:52px;border-radius:50%;background:rgba(168,85,247,0.12);border:1px solid rgba(168,85,247,0.3);display:flex;align-items:center;justify-content:center;font-size:24px">🖼</div>
+          <div style="font-size:13px;font-weight:500;color:var(--text2)">Add your photo</div>
+          <div style="font-size:11px;color:var(--text3)">Click to upload</div>
+        </div>
+        <input type="file" id="photoInput" accept="image/*" style="display:none" onchange="loadHeroPhoto(event)"/>
+        <button id="removePhotoBtn" onclick="removeHeroPhoto(event)" style="display:none;position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.65);border:none;border-radius:50%;width:28px;height:28px;color:white;cursor:pointer;font-size:14px;line-height:1">✕</button>
+      </div>
+      <div style="font-size:11px;color:var(--text3);text-align:center">Stored locally in your browser</div>
+    </div>
+  </div>
+  <div style="max-width:1040px;margin:40px auto 0">
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">4.2</div><div class="hstat-label">Years experience</div></div>
+      <div class="hstat"><div class="hstat-num">40K+</div><div class="hstat-label">Orders routed daily</div></div>
+      <div class="hstat"><div class="hstat-num">92→97%</div><div class="hstat-label">Picking accuracy</div></div>
+      <div class="hstat"><div class="hstat-num">43%</div><div class="hstat-label">Efficiency gain</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item">⬡ <span>Order Management Systems</span></div>
+    <div class="ticker-item">⬡ <span>Last-Mile Logistics</span></div>
+    <div class="ticker-item">⬡ <span>ISB Product Management</span></div>
+    <div class="ticker-item">⬡ <span>Pharma Retail Tech</span></div>
+    
+    <div class="ticker-item">⬡ <span>Supply Chain Domain</span></div>
+    <div class="ticker-item">⬡ <span>RPA Automation</span></div>
+    <div class="ticker-item">⬡ <span>E-commerce Products</span></div>
+    <div class="ticker-item">⬡ <span>Order Management Systems</span></div>
+    <div class="ticker-item">⬡ <span>Last-Mile Logistics</span></div>
+    <div class="ticker-item">⬡ <span>ISB Product Management</span></div>
+    <div class="ticker-item">⬡ <span>Pharma Retail Tech</span></div>
+    
+    <div class="ticker-item">⬡ <span>Supply Chain Domain</span></div>
+    <div class="ticker-item">⬡ <span>RPA Automation</span></div>
+    <div class="ticker-item">⬡ <span>E-commerce Products</span></div>
+  </div>
+</div>
+
+<!-- ABOUT SPLIT 1 + 2 combined -->
+<div id="about" style="background:var(--bg2);padding:72px 48px 0">
+  <!-- Row 1: My Story -->
+  <div style="max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;padding-bottom:72px;border-bottom:1px solid var(--border)">
+    <div class="split-text">
+      <div class="eyebrow">My story</div>
+      <h2 style="font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-1px;line-height:1.2;margin-bottom:12px">From supply chains to product ownership</h2>
+      <p style="font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:16px">I started by studying Integrated Shipping &amp; Logistics Management — which meant I understood how physical goods move before I understood software. That combination turned out to be rarer and more valuable than I expected.</p>
+      <p style="font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:20px">At Apollo Pharmacy I joined as a BA and kept finding myself doing PM work without the title. I shaped what to build, prioritised features, ran UAT, and led stakeholder alignment. My manager eventually made it official.</p>
+      <a href="#work" class="learn-more">See my products →</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="mock-card">
+        <div class="mock-label">Career trajectory</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+          <div class="mock-row"><span class="mock-row-label">BA → Apollo</span><span class="mock-row-val" style="color:var(--text2)">Sep 2021</span></div>
+          <div class="mock-row"><span class="mock-row-label">PM → Apollo</span><span class="mock-row-val" style="color:var(--accent)">Jul 2023 ✦</span></div>
+          <div class="mock-row"><span class="mock-row-label">Program Mgr → Algonox</span><span class="mock-row-val" style="color:var(--text2)">Aug 2024 – Sep 2025</span></div>
+          <div class="mock-row"><span class="mock-row-label">Sr. PM → Apollo Health Co</span><span class="mock-row-val" style="color:var(--accent)">Oct 2025 ✦</span></div>
+        </div>
+      </div>
+      <div class="mock-card">
+        <div class="mock-label">Certifications</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+          <span class="stat-chip">ISB PM</span>
+          <span class="stat-chip">Google PM</span>
+          <span class="stat-chip">Gen AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2: How I Work -->
+  <div style="max-width:1040px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;padding:72px 0">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="mock-card">
+        <div class="mock-label">OMS — Order routing accuracy</div>
+        <div class="mock-val">99.2%</div>
+        <div class="mock-bar"><div class="mock-fill" style="width:99%;background:linear-gradient(90deg,var(--accent2),var(--green))"></div></div>
+      </div>
+      <div class="mock-card">
+        <div class="mock-label">Pick &amp; Pack — Picking accuracy</div>
+        <div style="display:flex;align-items:baseline;gap:8px">
+          <span style="font-size:14px;color:var(--text3);text-decoration:line-through">92%</span>
+          <div class="mock-val">97%</div>
+        </div>
+        <div class="mock-bar"><div class="mock-fill" style="width:97%;background:linear-gradient(90deg,var(--accent2),var(--green))"></div></div>
+      </div>
+      <div class="mock-card">
+        <div class="mock-label">MedsenseAI — Efficiency gain</div>
+        <div class="mock-val" style="color:var(--green)">+43%</div>
+      </div>
+    </div>
+    <div class="split-text">
+      <div class="eyebrow">How I work</div>
+      <h2 style="font-size:clamp(26px,3.5vw,40px);font-weight:700;letter-spacing:-1px;line-height:1.2;margin-bottom:12px">Discover first. Build second. Ship smart.</h2>
+      <p style="font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:20px">I don't write specs on day one. I shadow the people my product is supposed to help — riders, warehouse staff, cluster managers — before I open a doc.</p>
+      <div class="step-list">
+        <div class="step-row"><div class="step-icon">1</div><div class="step-info"><div class="step-name">Shadow &amp; discover</div><div class="step-desc">Understand the real failure modes before designing</div></div></div>
+        <div class="step-row"><div class="step-icon">2</div><div class="step-info"><div class="step-name">Document &amp; prioritise</div><div class="step-desc">BRD, FRD, effort-impact matrix, phased roadmap</div></div></div>
+        <div class="step-row"><div class="step-icon">3</div><div class="step-info"><div class="step-name">Build, test, launch</div><div class="step-desc">UAT with real users, phased rollout, daily monitoring</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section style="background:var(--bg2)">
+  <div class="inner">
+    <div class="eyebrow">What I bring</div>
+    <h2 class="sec-title">Skills that cross the stack</h2>
+    <p class="sec-sub">I can speak to an engineer about APIs, to a cluster manager about routing zones, and to a CFO about AOP savings — sometimes in the same day.</p>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">📋</div>
+        <div class="feat-title">Product ownership</div>
+        <div class="feat-desc">End-to-end: discovery, PRD, BRD, FRD, roadmapping, UAT, launch. Not just coordination — actual ownership of outcomes.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🚚</div>
+        <div class="feat-title">Logistics & supply chain domain</div>
+        <div class="feat-desc">BBA in Integrated Shipping & Logistics. Built last-mile, OMS, pick-and-pack, and rider allocation products from scratch.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📊</div>
+        <div class="feat-title">Data-informed decisions</div>
+        <div class="feat-desc">SQL, Google Data Studio, metric definition, funnel analysis, A/B testing. I define success before writing a single line of spec.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🤝</div>
+        <div class="feat-title">Cross-functional alignment</div>
+        <div class="feat-desc">Comfortable with engineers, ops, finance, and global stakeholders. Weekly syncs, no surprises, decisions documented.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="work" style="background:var(--bg)">
+  <div class="inner">
+    <div class="eyebrow">Case studies</div>
+    <h2 class="sec-title">Products I've built</h2>
+    <p class="sec-sub">Real products, real constraints, real outcomes — not side projects or hypotheticals.</p>
+    <div class="cs-wrapper">
+      <a class="cs-row featured" href="Lena_OMS_CaseStudy.html">
+        <div>
+          <div class="cs-tag">⭐ Featured · Business Analyst → Product Manager</div>
+          <div class="cs-title">Order Management System — 40,000 orders a day</div>
+          <div class="cs-desc">Built a multi-channel OMS from scratch at Apollo Pharmacy — intelligent routing engine, inventory reservation, DSP API integration, and automated returns. Promoted from BA to PM during this build.</div>
+          <div class="cs-nums">
+            <div class="cs-num"><div class="cs-num-val">40K+</div><div class="cs-num-label">Orders / day</div></div>
+            <div class="cs-num"><div class="cs-num-val">~0</div><div class="cs-num-label">Manual routing steps</div></div>
+            <div class="cs-num"><div class="cs-num-val">&lt;48h</div><div class="cs-num-label">Returns TAT</div></div>
+            <div class="cs-num"><div class="cs-num-val">3</div><div class="cs-num-label">DSPs integrated</div></div>
+          </div>
+        </div>
+        <div class="cs-arrow">↗</div>
+      </a>
+      <a class="cs-row" href="#">
+        <div>
+          <div class="cs-tag">Product Manager</div>
+          <div class="cs-title">Last Mile Delivery Application</div>
+          <div class="cs-desc">Built a rider allocation rule engine, polygon cluster mapping, and digital payment integration for PAN-India pharmacy delivery — from zero infrastructure to live rollout.</div>
+          <div class="cs-nums">
+            <div class="cs-num"><div class="cs-num-val">0→1</div><div class="cs-num-label">Built from scratch</div></div>
+            <div class="cs-num"><div class="cs-num-val">PAN India</div><div class="cs-num-label">Rollout</div></div>
+          </div>
+        </div>
+        <div class="cs-arrow">↗</div>
+      </a>
+      <a class="cs-row" href="#">
+        <div>
+          <div class="cs-tag">Product Manager</div>
+          <div class="cs-title">Mobile Pick & Pack — 92% → 97% accuracy</div>
+          <div class="cs-desc">Mobile warehouse app with barcode/QR scanning and PIM integration. Improved picking accuracy by 5 percentage points PAN-India — a 54% reduction in picking errors.</div>
+          <div class="cs-nums">
+            <div class="cs-num"><div class="cs-num-val">+5pp</div><div class="cs-num-label">Accuracy gain</div></div>
+            <div class="cs-num"><div class="cs-num-val">97%</div><div class="cs-num-label">Final accuracy</div></div>
+          </div>
+        </div>
+        <div class="cs-arrow">↗</div>
+      </a>
+      <a class="cs-row" href="#">
+        <div>
+          <div class="cs-tag">Program Manager · US Healthcare</div>
+          <div class="cs-title">MedsenseAI — RCM Automation</div>
+          <div class="cs-desc">Led RCM automation for US healthcare clients — EOB extraction, denial management, claim validation across three parallel workstreams. 43% operational efficiency improvement.</div>
+          <div class="cs-nums">
+            <div class="cs-num"><div class="cs-num-val">43%</div><div class="cs-num-label">Efficiency gain</div></div>
+            <div class="cs-num"><div class="cs-num-val">3</div><div class="cs-num-label">Parallel workstreams</div></div>
+          </div>
+        </div>
+        <div class="cs-arrow">↗</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TEARDOWNS -->
+<section id="teardowns" style="background:var(--bg)">
+  <div class="inner">
+    <div class="eyebrow">Product teardowns</div>
+    <h2 class="sec-title">How I think about products</h2>
+    <p class="sec-sub">Deep dives into products I use, love, or think could be better. Written for fun and sharpening PM thinking.</p>
+    <div class="cs-wrapper" id="teardownsList">
+      <div class="cs-row" style="cursor:default">
+        <div>
+          <div class="cs-tag">E-commerce · Logistics</div>
+          <div class="cs-title">Delhivery Tracking Experience — what works and what doesn't</div>
+          <div class="cs-desc">An analysis of Delhivery's customer-facing tracking product — the good, the gaps, and three changes I'd prioritise as a PM to reduce "where is my order?" calls by 40%.</div>
+          <div class="cs-nums">
+            <div class="cs-num"><div class="cs-num-val">Coming</div><div class="cs-num-label">Soon</div></div>
+          </div>
+        </div>
+        <div class="cs-arrow" style="color:var(--text3)">→</div>
+      </div>
+      <!-- Add teardown form -->
+      <div style="padding:24px 36px;border-top:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end">
+        <div style="flex:1;min-width:180px"><div class="form-label" style="margin-bottom:6px">Product name</div><input class="form-input" id="tdProduct" placeholder="e.g. Swiggy Instamart"/></div>
+        <div style="flex:2;min-width:240px"><div class="form-label" style="margin-bottom:6px">What's your take?</div><input class="form-input" id="tdTake" placeholder="One line summary of your teardown"/></div>
+        <button class="entry-btn" onclick="addTeardown()">+ Add teardown</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--bg2)">
+  <div class="inner">
+    <div class="eyebrow">Projects</div>
+    <h2 class="sec-title">Things I've built & explored</h2>
+    <p class="sec-sub">Side projects, experiments, and initiatives beyond my day job.</p>
+    <div class="cs-wrapper" id="projectsList">
+      <div class="cs-row" style="cursor:default">
+        <div>
+          <div class="cs-tag">Portfolio · Personal Brand</div>
+          <div class="cs-title">This website</div>
+          <div class="cs-desc">Designed and built my own dark-themed portfolio from scratch — case studies, personal section, teardowns, and a contact panel. Deployed on Netlify.</div>
+        </div>
+        <div class="cs-arrow" style="color:var(--text3)">→</div>
+      </div>
+      <!-- Add project form -->
+      <div style="padding:24px 36px;border-top:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end">
+        <div style="flex:1;min-width:180px"><div class="form-label" style="margin-bottom:6px">Project name</div><input class="form-input" id="projName" placeholder="e.g. LinkedIn Content Series"/></div>
+        <div style="flex:2;min-width:240px"><div class="form-label" style="margin-bottom:6px">What is it?</div><input class="form-input" id="projDesc" placeholder="One line description"/></div>
+        <div style="min-width:120px"><div class="form-label" style="margin-bottom:6px">Category</div><input class="form-input" id="projCat" placeholder="e.g. Writing"/></div>
+        <button class="entry-btn" onclick="addProject()">+ Add project</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL -->
+<section id="personal" style="background:var(--bg3)">
+  <div class="inner">
+    <div class="eyebrow">Beyond work</div>
+    <h2 class="sec-title">The person behind the PM</h2>
+    <p class="sec-sub">Trips, learnings, poems, books, and everything in between.</p>
+    <div style="display:flex;gap:8px;margin:28px 0 24px;flex-wrap:wrap">
+      <button class="ptab active" onclick="switchTab('trips',this)">✈ Trips</button>
+      <button class="ptab" onclick="switchTab('learnings',this)">💡 Learnings</button>
+      <button class="ptab" onclick="switchTab('poems',this)">🖊 Poems</button>
+      <button class="ptab" onclick="switchTab('reads',this)">📚 Reads</button>
+      <button class="ptab" onclick="switchTab('aboutme',this)">🤍 About me</button>
+    </div>
+
+    <div id="tab-trips" class="ptab-panel">
+      <div class="photo-grid" id="tripsGrid">
+        <label class="photo-add-card">
+          <div style="font-size:28px;margin-bottom:8px">📸</div>
+          <div style="font-size:13px;font-weight:500;color:var(--text2)">Add trip photo</div>
+          <div style="font-size:11px;color:var(--text3);margin-top:4px">Click to upload</div>
+          <input type="file" accept="image/*" multiple style="display:none" onchange="addTripPhotos(event)"/>
+        </label>
+      </div>
+      <p style="font-size:12px;color:var(--text3);margin-top:14px">Photos stored locally in your browser only.</p>
+    </div>
+
+    <div id="tab-learnings" class="ptab-panel" style="display:none">
+      <div class="entries-list" id="learningsList">
+        <div class="entry-card"><div class="entry-meta">Product · 2024</div><div class="entry-title">Before you build the feature, build the shared understanding.</div><div class="entry-body">The biggest insight from building the Last Mile Delivery app — technology is almost never the bottleneck. Clarity is.</div></div>
+        <div class="entry-card"><div class="entry-meta">Leadership · 2023</div><div class="entry-title">Pilot with the skeptic, not the believer.</div><div class="entry-body">Believers work around bugs. Skeptics don't. The most honest feedback comes from the person who wanted you to fail.</div></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;align-items:flex-end">
+        <div style="flex:1;min-width:160px"><input class="form-input" id="lrnTitle" placeholder="What did you learn?"/></div>
+        <div style="flex:2;min-width:200px"><input class="form-input" id="lrnBody" placeholder="Expand on it..."/></div>
+        <div style="min-width:100px"><input class="form-input" id="lrnMeta" placeholder="Topic · Year"/></div>
+        <button class="entry-btn" onclick="addEntry('learningsList','lrnTitle','lrnBody','lrnMeta')">+ Add</button>
+      </div>
+    </div>
+
+    <div id="tab-poems" class="ptab-panel" style="display:none">
+      <div class="entries-list" id="poemsList">
+        <div class="entry-card poem-style"><div class="entry-meta">✦ Write something</div><div class="entry-title" style="font-style:italic;line-height:1.7;font-size:17px">Every product is a poem —<br>it says something<br>without saying everything.</div></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;align-items:flex-end">
+        <div style="flex:1;min-width:160px"><input class="form-input" id="poemTitle" placeholder="Title (optional)"/></div>
+        <div style="flex:3;min-width:240px"><textarea class="form-input" id="poemBody" placeholder="Write your poem here..." style="min-height:72px;resize:vertical"></textarea></div>
+        <button class="entry-btn" onclick="addPoem()">+ Add</button>
+      </div>
+    </div>
+
+    <div id="tab-reads" class="ptab-panel" style="display:none">
+      <div class="reads-grid" id="readsList">
+        <div class="read-card"><div class="read-cover" style="background:linear-gradient(135deg,#1e3a5f,#2d6a9f)">📘</div><div class="read-title">Inspired</div><div class="read-author">Marty Cagan</div><span class="read-tag reading">Reading now</span></div>
+        <div class="read-card"><div class="read-cover" style="background:linear-gradient(135deg,#3d1f5e,#7b3fa0)">📗</div><div class="read-title">Continuous Discovery Habits</div><div class="read-author">Teresa Torres</div><span class="read-tag done">Read</span></div>
+        <div class="read-card"><div class="read-cover" style="background:linear-gradient(135deg,#1f3d2d,#2d7a4f)">📙</div><div class="read-title">Hooked</div><div class="read-author">Nir Eyal</div><span class="read-tag done">Read</span></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;align-items:flex-end">
+        <div style="flex:1;min-width:140px"><input class="form-input" id="bookTitle" placeholder="Book title"/></div>
+        <div style="flex:1;min-width:120px"><input class="form-input" id="bookAuthor" placeholder="Author"/></div>
+        <div style="min-width:110px">
+          <select class="form-input" id="bookStatus"><option value="reading">Reading now</option><option value="done">Read</option><option value="want">Want to read</option></select>
+        </div>
+        <button class="entry-btn" onclick="addBook()">+ Add book</button>
+      </div>
+    </div>
+
+    <div id="tab-aboutme" class="ptab-panel" style="display:none">
+      <div class="personal-grid">
+        <div class="personal-card"><div class="personal-emoji">🌍</div><div class="personal-title">Traveller at heart</div><div class="personal-text">Exploring new cities teaches me to navigate ambiguity and observe how people interact with unfamiliar systems.</div><div style="margin-top:12px"><span class="personal-tag">Exploration</span><span class="personal-tag">Cultures</span></div></div>
+        <div class="personal-card"><div class="personal-emoji">📚</div><div class="personal-title">Continuous learner</div><div class="personal-text">From ISB to Generative AI — always upskilling. Currently reading Continuous Discovery Habits.</div><div style="margin-top:12px"><span class="personal-tag">PM Books</span><span class="personal-tag">AI Tools</span></div></div>
+        <div class="personal-card"><div class="personal-emoji">🧩</div><div class="personal-title">Systems thinker</div><div class="personal-text">I look for hidden dependencies that others miss — in supply chains, teams, and software.</div><div style="margin-top:12px"><span class="personal-tag">Problem solving</span></div></div>
+        <div class="personal-card"><div class="personal-emoji">🎯</div><div class="personal-title">Goal-driven</div><div class="personal-text">From a non-tech background to 40,000 orders/day. Every step was intentional.</div><div style="margin-top:12px"><span class="personal-tag">Ambitious</span></div></div>
+        <div class="personal-card"><div class="personal-emoji">🤝</div><div class="personal-title">People person</div><div class="personal-text">Best product insights come from conversations — with riders, pharmacists, and customers.</div><div style="margin-top:12px"><span class="personal-tag">User empathy</span></div></div>
+        <div class="personal-card" style="background:rgba(168,85,247,0.06);border:1px solid rgba(168,85,247,0.15)"><div class="personal-emoji">✨</div><div class="personal-title">What drives me</div><div class="personal-text">The 97% picking accuracy wasn't a number — it was fewer wrong medicines reaching patients.</div><div style="margin-top:12px"><span class="personal-tag" style="color:var(--accent)">Impact-first</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--bg)">
+  <div class="inner">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="sec-title">Questions I get asked</h2>
+    <div class="faq-wrap">
+      <div class="faq-logo-box">
+        <div class="faq-glow"></div>
+        <div class="faq-logo-inner">LA</div>
+      </div>
+      <div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span>Are you open to relocation?</span>
+              <span class="faq-plus">+</span>
+            </div>
+            <div class="faq-a">Yes, I'm open to relocating within India for the right opportunity. I'm also open to remote-first roles. My current base is Hyderabad.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span>What kind of PM role are you targeting?</span>
+              <span class="faq-plus">+</span>
+            </div>
+            <div class="faq-a">I'm targeting PM-1 or PM-2 roles at product companies — specifically in e-commerce, logistics tech, or SaaS. I've held a PM title before, so I'm not looking for APM roles. I'm also open to Senior BA roles that have a clear PM growth path.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span>What's your strongest domain area?</span>
+              <span class="faq-plus">+</span>
+            </div>
+            <div class="faq-a">Logistics, last-mile delivery, and supply chain tech. My BBA in Integrated Shipping & Logistics Management combined with 4+ years of hands-on product work in pharma retail and logistics makes this my sharpest angle — and one that's rare among PM candidates.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span>Do you have engineering or coding skills?</span>
+              <span class="faq-plus">+</span>
+            </div>
+            <div class="faq-a">I'm not a developer, but I'm technical enough to work closely with engineers. I've written API test cases, worked with SQL for data analysis, collaborated on integration specs, and managed bug trackers across manual and API testing. I understand technical constraints without needing to be hand-held.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              <span>What's your notice period?</span>
+              <span class="faq-plus">+</span>
+            </div>
+            <div class="faq-a">I'm currently employed as a Senior Product Manager at Apollo Health Co (joined Oct 2025). I'm selectively open to conversations about exceptional PM opportunities.</div>
+          </div>
+        </div>
+        <div class="faq-cta">
+          <span class="faq-cta-text">Have a different question?</span>
+          <a href="#" class="faq-cta-btn" onclick="openContact();return false;">Ask me directly</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" style="padding:100px 48px;text-align:center;position:relative;overflow:hidden">
+  <div class="cta-glow"></div>
+  <h2 class="cta-title">Let's build something<br>that matters.</h2>
+  <p class="cta-sub">Senior Product Manager at Apollo Health Co · Hyderabad · Open to meaningful conversations.</p>
+  <div class="hero-btns">
+    <a href="#" class="btn-dark" onclick="openContact();return false;">Get in touch</a>
+    <a href="Lena_Aravinth_Resume_Rebuilt.docx" class="btn-outline">Download resume</a>
+  </div>
+  <div class="floating-cards">
+    <div class="f-card">
+      <div><div class="f-card-name">Role</div><div class="f-card-role">Product Manager</div></div>
+      <div class="f-card-tag">PM-1 / PM-2</div>
+    </div>
+    <div class="f-card">
+      <div><div class="f-card-name">Candidate</div><div class="f-card-role">Lena Aravinth B</div></div>
+      <div class="f-card-tag">ISB Certified · 4.2 yrs</div>
+    </div>
+    <div class="f-card">
+      <div><div class="f-card-name">Domain</div><div class="f-card-role">Logistics & E-comm</div></div>
+      <div class="f-card-tag">Supply chain PM</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">© 2025 Lena Aravinth B · Hyderabad, India</div>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#personal">Personal</a>
+    <a href="mailto:Lenaaravinth@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/lenaaravinthb" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)
+})
+function openContact(){
+  document.getElementById('contactPanel').classList.add('open')
+  document.getElementById('overlay').classList.add('open')
+  document.body.style.overflow='hidden'
+}
+function closeContact(){
+  document.getElementById('contactPanel').classList.remove('open')
+  document.getElementById('overlay').classList.remove('open')
+  document.body.style.overflow=''
+}
+function toggleFaq(el){
+  const ans=el.nextElementSibling
+  const plus=el.querySelector('.faq-plus')
+  const wasOpen=ans.classList.contains('open')
+  document.querySelectorAll('.faq-a').forEach(a=>a.classList.remove('open'))
+  document.querySelectorAll('.faq-plus').forEach(p=>p.classList.remove('open'))
+  if(!wasOpen){ans.classList.add('open');plus.classList.add('open')}
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const h=a.getAttribute('href')
+    if(h==='#')return
+    const t=document.querySelector(h)
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
+  })
+})
+
+// ── HERO PHOTO ──────────────────────────────────────
+function loadHeroPhoto(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    const img = document.getElementById('heroPhoto');
+    const ph = document.getElementById('photoPlaceholder');
+    const btn = document.getElementById('removePhotoBtn');
+    img.src = ev.target.result;
+    img.style.display = 'block';
+    ph.style.display = 'none';
+    btn.style.display = 'flex';
+  };
+  reader.readAsDataURL(file);
+}
+function removeHeroPhoto(e) {
+  e.stopPropagation();
+  document.getElementById('heroPhoto').src = '';
+  document.getElementById('heroPhoto').style.display = 'none';
+  document.getElementById('photoPlaceholder').style.display = 'flex';
+  document.getElementById('removePhotoBtn').style.display = 'none';
+  document.getElementById('photoInput').value = '';
+}
+
+// ── PERSONAL TABS ────────────────────────────────────
+function switchTab(id, btn) {
+  document.querySelectorAll('.ptab-panel').forEach(p => p.style.display = 'none');
+  document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).style.display = 'block';
+  btn.classList.add('active');
+}
+
+// ── TRIP PHOTOS ──────────────────────────────────────
+function addTripPhotos(e) {
+  const grid = document.getElementById('tripsGrid');
+  Array.from(e.target.files).forEach(file => {
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      const div = document.createElement('div');
+      div.className = 'trip-photo';
+      div.innerHTML = '<img src="' + ev.target.result + '" alt="trip"/><button class="del-btn" onclick="this.parentNode.remove()">✕</button>';
+      grid.insertBefore(div, grid.firstChild);
+    };
+    reader.readAsDataURL(file);
+  });
+  e.target.value = '';
+}
+
+// ── LEARNINGS ────────────────────────────────────────
+function addEntry(listId, titleId, bodyId, metaId) {
+  const title = document.getElementById(titleId).value.trim();
+  const body = document.getElementById(bodyId).value.trim();
+  const meta = document.getElementById(metaId) ? document.getElementById(metaId).value.trim() : '';
+  if (!title) return;
+  const list = document.getElementById(listId);
+  const card = document.createElement('div');
+  card.className = 'entry-card';
+  card.innerHTML = (meta ? '<div class="entry-meta">' + meta + '</div>' : '') +
+    '<div class="entry-title">' + title + '</div>' +
+    (body ? '<div class="entry-body">' + body + '</div>' : '');
+  list.prepend(card);
+  document.getElementById(titleId).value = '';
+  document.getElementById(bodyId).value = '';
+  if (document.getElementById(metaId)) document.getElementById(metaId).value = '';
+}
+
+// ── POEMS ────────────────────────────────────────────
+function addPoem() {
+  const title = document.getElementById('poemTitle').value.trim();
+  const body = document.getElementById('poemBody').value.trim();
+  if (!body) return;
+  const list = document.getElementById('poemsList');
+  const card = document.createElement('div');
+  card.className = 'entry-card poem-style';
+  card.innerHTML = (title ? '<div class="entry-meta">✦ ' + title + '</div>' : '<div class="entry-meta">✦</div>') +
+    '<div class="entry-title">' + body.replace(/\n/g, '<br>') + '</div>';
+  list.prepend(card);
+  document.getElementById('poemTitle').value = '';
+  document.getElementById('poemBody').value = '';
+}
+
+// ── BOOKS ────────────────────────────────────────────
+const bookEmojis = ['📘','📗','📙','📕','📓','📔'];
+function addBook() {
+  const title = document.getElementById('bookTitle').value.trim();
+  const author = document.getElementById('bookAuthor').value.trim();
+  const status = document.getElementById('bookStatus').value;
+  if (!title) return;
+  const list = document.getElementById('readsList');
+  const colors = ['linear-gradient(135deg,#1e3a5f,#2d6a9f)','linear-gradient(135deg,#3d1f5e,#7b3fa0)','linear-gradient(135deg,#1f3d2d,#2d7a4f)','linear-gradient(135deg,#3d2f1f,#9f6a2d)'];
+  const color = colors[Math.floor(Math.random()*colors.length)];
+  const emoji = bookEmojis[Math.floor(Math.random()*bookEmojis.length)];
+  const statusLabel = status === 'reading' ? 'Reading now' : status === 'done' ? 'Read' : 'Want to read';
+  const card = document.createElement('div');
+  card.className = 'read-card';
+  card.innerHTML = '<div class="read-cover" style="background:' + color + '">' + emoji + '</div>' +
+    '<div class="read-title">' + title + '</div>' +
+    '<div class="read-author">' + (author || '') + '</div>' +
+    '<span class="read-tag ' + status + '">' + statusLabel + '</span>';
+  list.appendChild(card);
+  document.getElementById('bookTitle').value = '';
+  document.getElementById('bookAuthor').value = '';
+}
+
+// ── TEARDOWNS ────────────────────────────────────────
+function addTeardown() {
+  const product = document.getElementById('tdProduct').value.trim();
+  const take = document.getElementById('tdTake').value.trim();
+  if (!product || !take) return;
+  const list = document.getElementById('teardownsList');
+  const row = document.createElement('a');
+  row.className = 'cs-row';
+  row.style.cursor = 'default';
+  row.innerHTML = '<div><div class="cs-tag">Product Teardown</div><div class="cs-title">' + product + '</div><div class="cs-desc">' + take + '</div></div><div class="cs-arrow">→</div>';
+  list.insertBefore(row, list.firstChild);
+  document.getElementById('tdProduct').value = '';
+  document.getElementById('tdTake').value = '';
+}
+
+// ── PROJECTS ─────────────────────────────────────────
+function addProject() {
+  const name = document.getElementById('projName').value.trim();
+  const desc = document.getElementById('projDesc').value.trim();
+  const cat = document.getElementById('projCat').value.trim();
+  if (!name || !desc) return;
+  const list = document.getElementById('projectsList');
+  const row = document.createElement('div');
+  row.className = 'cs-row';
+  row.style.cursor = 'default';
+  row.innerHTML = '<div>' + (cat ? '<div class="cs-tag">' + cat + '</div>' : '') + '<div class="cs-title">' + name + '</div><div class="cs-desc">' + desc + '</div></div><div class="cs-arrow">→</div>';
+  list.insertBefore(row, list.firstChild);
+  document.getElementById('projName').value = '';
+  document.getElementById('projDesc').value = '';
+  document.getElementById('projCat').value = '';
+}
+
+</script>
+</body>
+</html>
